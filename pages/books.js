@@ -10,13 +10,11 @@ export default function Books() {
 
   const router = useRouter();
 
-
-
   const queryString = new URLSearchParams(router.query).toString();
 
-  const { data, error } = useSWR(`https://openlibrary.org/search.json?${queryString}&page=${page}&limit=10`);
-
-
+  const { data, error } = useSWR(
+    `https://openlibrary.org/search.json?${queryString}&page=${page}&limit=10`
+  );
 
   useEffect(() => {
     if (data) {
@@ -24,29 +22,27 @@ export default function Books() {
     }
   }, [data]);
 
+  const next = () => setPage((prev) => prev + 1);
+  const prev = () => setPage((prev) => (prev > 1 ? prev - 1 : 1));
 
-  const next = () => setPage(prev => prev + 1);
-  const prev = () => setPage(prev => (prev > 1 ? prev - 1 : 1));
-
-
-  if (error) return <div>Failed to Load</div>
-  if (!data) return <div>Loading</div>
+  if (error) return <div>Failed to Load</div>;
+  if (!data) return <div>Loading</div>;
 
   const totalResults = data.numFound || 0;
   const resultsPerPage = 10;
   const maxPage = Math.ceil(totalResults / resultsPerPage);
-
 
   return (
     <>
       <PageHeader
         text="Search Results"
         subtext={Object.entries(router.query).map(([key, value]) => (
-          <span>
-            <strong>{key}: </strong> {value} {' '}
+          <span key={key}>
+            <strong>{key}: </strong> {value}{" "}
           </span>
         ))}
       />
+
       <Table striped hover>
         <thead>
           <tr>
@@ -64,6 +60,7 @@ export default function Books() {
           ))}
         </tbody>
       </Table>
+
       <Pagination>
         <Pagination.Prev onClick={prev} disabled={page === 1} />
         <Pagination.Item>{page}</Pagination.Item>
