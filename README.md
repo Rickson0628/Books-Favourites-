@@ -1,6 +1,8 @@
-[# 📚 Books Favourites App
+# 📚 Books Favourites App
 
 A full-stack web application that allows users to browse books, register/login, and save their favourite titles. This project was created for the WEB422 course to demonstrate authentication, REST APIs, and working with a deployed MongoDB/Express/React environment.
+
+Backend API for this project is available here: [User API](https://github.com/Rickson0628/user-api)
 
 ---
 
@@ -134,4 +136,3 @@ DELETE /api/books/favourites/:id
 
 Developed by **Rickson Bozar**
 WEB422 – Full-Stack Web Development
-](https://github.com/Rickson0628/user-api)
