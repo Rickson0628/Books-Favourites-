@@ -1,40 +1,136 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 📚 Books Favourites App
 
-## Getting Started
+A full-stack web application that allows users to browse books, register/login, and save their favourite titles. This project was created for the WEB422 course to demonstrate authentication, REST APIs, and working with a deployed MongoDB/Express/React environment.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Live Demo
+
+🔗 **[https://books-favourites-xt9c.vercel.app/login](https://books-favourites-xt9c.vercel.app/login)**
+
+---
+
+## 🛠️ Tech Stack
+
+### **Frontend**
+
+* React
+* React Router
+* Bootstrap 5
+* Vercel (Deployment)
+
+### **Backend**
+
+* Node.js
+* Express.js
+* MongoDB Atlas
+* Mongoose
+* JWT Authentication
+
+---
+
+## ✨ Features
+
+* 🔐 **User Authentication** (Register, Login, Logout)
+* 📚 **Browse books** and view details
+* ⭐ **Mark books as favourites**
+* ❤️ **View your personal favourites list**
+* 🔒 Secure API endpoints protected by JWT
+* 🌐 Fully deployed using Vercel + MongoDB Atlas
+
+---
+
+## 📦 Installation (Local Setup)
+
+### 1️⃣ Clone the repository
+
+```
+git clone https://github.com/your-username/books-favourites.git
+cd books-favourites
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2️⃣ Install backend dependencies
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+npm install
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### 3️⃣ Create a `.env` file
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+```
+PORT=8080
+MONGODB=mongodb+srv://<your-db-uri>
+JWT_SECRET=your-secret-key
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4️⃣ Run the backend
 
-## Learn More
+```
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 5️⃣ Run the frontend (if in a `/client` folder)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+```
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🔧 Environment Variables
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Variable     | Description                          |
+| ------------ | ------------------------------------ |
+| `PORT`       | Server port                          |
+| `MONGODB`    | MongoDB Atlas connection string      |
+| `JWT_SECRET` | Key used for signing JSON Web Tokens |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+---
+
+## 📁 Project Structure
+
+```
+/server
+  ├── routes/
+  ├── models/
+  ├── controllers/
+  ├── user-service.js
+  └── server.js
+
+/client
+  ├── src/
+  │    ├── components/
+  │    ├── pages/
+  │    ├── hooks/
+  │    └── App.js
+  ├── public/
+  └── package.json
+```
+
+---
+
+## 🧪 API Endpoints (Example)
+
+### **Auth Routes**
+
+```
+POST /api/register
+POST /api/login
+GET  /api/profile
+```
+
+### **Book Routes**
+
+```
+GET    /api/books
+POST   /api/books/favourites
+GET    /api/books/favourites
+DELETE /api/books/favourites/:id
+```
+
+---
+
+## 🤝 Credits
+
+Developed by **Rickson Bozar**
+WEB422 – Full-Stack Web Development
