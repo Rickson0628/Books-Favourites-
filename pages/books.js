@@ -9,10 +9,12 @@ export default function Books() {
   const [pageData, setPageData] = useState([]);
 
   const router = useRouter();
+  
+  //Updated code for search
 
   let queryString = { ...router.query };
   let qParts = [];
-
+  
   Object.entries(queryString).forEach(([key, value]) => {
     qParts.push(`${key}:${value}`);
   });
