@@ -10,10 +10,19 @@ export default function Books() {
 
   const router = useRouter();
 
-  const queryString = new URLSearchParams(router.query).toString();
+  let queryString = { ...router.query };
+  let qParts = [];
+
+  Object.entries(queryString).forEach(([key, value]) => {
+    qParts.push(`${key}:${value}`);
+  });
+
+  if (qParts.length > 0) {
+    queryString = qParts.join(" AND ");
+  }
 
   const { data, error } = useSWR(
-    `https://openlibrary.org/search.json?${queryString}&page=${page}&limit=10`
+    `https://openlibrary.org/search.json?q=${queryString}&page=${page}&limit=10`
   );
 
   useEffect(() => {
