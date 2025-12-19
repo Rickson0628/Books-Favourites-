@@ -24,6 +24,7 @@ Backend API for this project is available here: [User API](https://github.com/Ri
 ### **Backend**
 
 * Node.js
+* Next.js 
 * Express.js
 * MongoDB Atlas
 * Mongoose
