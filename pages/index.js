@@ -1,18 +1,3 @@
-
-/*********************************************************************************
-* WEB422 – Assignment 3
-*
-* I declare that this assignment is my own work in accordance with Seneca's
-* Academic Integrity Policy:
-*
-* https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html
-*
-* Name:Rickson Bozar Student ID: 167549237  Date: 2025-12-05
-*
-* Vercel App (Deployed) Link: _____________________________________________________
-*
-********************************************************************************/
-
 import PageHeader from "@/components/PageHeader";
 import { useRouter } from "next/router";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
